@@ -1,0 +1,33 @@
+class Formacao(
+    val nome: String,
+    val nivel: String,
+    val conteudosEducacionais: List<ConteudoEducacional>
+) {
+    fun matricularAluno(aluno: Aluno) {
+        // Lógica para matricular o aluno na formação
+    }
+}
+
+class ConteudoEducacional(
+    val titulo: String,
+    val descricao: String,
+    val duracao: Int // em horas
+)
+
+class Aluno(
+    val nome: String,
+    val email: String
+)
+
+fun main() {
+    // Exemplo de uso:
+    val conteudo1 = ConteudoEducacional("Introdução à Programação", "Fundamentos básicos de programação", 20)
+    val conteudo2 = ConteudoEducacional("Desenvolvimento Web", "Conceitos e tecnologias para web", 30)
+    val formacao = Formacao("Desenvolvimento Web Full Stack", "Avançado", listOf(conteudo1, conteudo2))
+
+    val aluno1 = Aluno("João", "joao@example.com")
+    val aluno2 = Aluno("Maria", "maria@example.com")
+
+    formacao.matricularAluno(aluno1)
+    formacao.matricularAluno(aluno2)
+}
